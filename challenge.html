@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="challenge">
+    <!-- 1) Fill the tag <p> bellow with your name and age - using interpolation -->
+    <p>Using VueJS - {{ name }} ({{ age }})</p>
+    
+    <!-- 2) Show your age multiplied by 3 -->
+    <p>{{ age * 3 }}</p>
+    
+    <!-- 3) Call a function that show a ramdon number
+        between 0 and 1 (Math.random()) -->
+    <p>{{ rand() }}</p>
+    
+    <!-- 4) Search an image on Google and show it inside img tag  
+        doing bind in "src" attribute -->
+    <div>
+        <img height="400" v-bind:src="img">
+    </div>
+    
+    <!-- 5) Initialize the input with your name (use the "value" attribute) -->
+    <div>
+        <input type="text" v-bind:value="name" style="margin: 10px 0px;">
+    </div>
+</div>
+<script src="app.js"></script>
