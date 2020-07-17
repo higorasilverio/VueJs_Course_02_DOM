@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p>{{ counter }}</p>
+    <button v-on:click="sum(5, $event)">Plus</button>
+    <p v-on:mousemove="updateXY">
+        Mouse : {{ x }} e {{ y }}
+        <span v-on:mousemove.stop="">STOP RIGHT HERE!!!</span>
+    </p>
+    <a v-on:click="doNotNavigate" href="https://google.com">Google</a>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            x: 0,
+            y: 0
+        },
+        methods:{
+            sum(pass, ev) {
+                console.log(pass, ev)
+                this.counter += pass
+            },
+            updateXY(event) {
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            stop(e) {
+                e.stopPropagation()
+            },
+            doNotNavigate(event) {
+                event.preventDefault()
+            }
+        }
+    })
+</script>
