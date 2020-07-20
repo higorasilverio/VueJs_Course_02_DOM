@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="challenge">
+    <!-- 1) Show a alert when clicked the button -->
+    <div>
+        <button v-on:click="showAlert()" style="margin-bottom: 10px;">Show alert</button>
+    </div>
+    
+    <!-- 2) Execute the event "keyup" and store the value on the data property
+        (hint: event.target.value) -->
+    <div>
+        <input type="text" v-on:keyup="storeOnData()">
+        <p>{{ value }}</p>
+    </div>
+    
+    <!-- 3) Adjuste the second example to trigger it only on "keydown" 
+        of the ENTER key -->
+    <div>
+        <input type="text" v-on:keydown.enter="value = $event.target.value">
+        <p>{{ value }}</p>
+    </div>
+</div>
+<script src="app_rev1.js"></script>
